@@ -27,13 +27,14 @@ public class HashMapOperations {
         //converting Hashmap Keys into ArryaList
         List<Integer> keyList = new ArrayList<Integer>(animalsMap.keySet());
         System.out.println("Key arrayList"+keyList);
+
         //converting Hashmap Values into ArryaList
         List<String> valueList = new ArrayList<String>(animalsMap.values());
         System.out.println("Value arraylist: "+valueList);
         printHashmap(animalsMap);
         //safe use of get method
         if(animalsMap.containsKey(5)){
-            System.out.println("Found got");
+            System.out.println("Found"+animalsMap.get(5));
         } else {
             System.out.println("Got not found");
         }
