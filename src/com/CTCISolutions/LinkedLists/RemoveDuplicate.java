@@ -29,7 +29,7 @@ public class RemoveDuplicate {
             n = n.next;
         }
     }
-    void deleteDupNoBuffer (LinkedListNode n){
+    public void deleteDupNoBuffer (LinkedListNode n){
         LinkedListNode head = n;
         // iteragte through the linked list
         while(head != null){
@@ -44,6 +44,30 @@ public class RemoveDuplicate {
             head = head.next;
         }
     }
+    public LinkedListNode kThNodeToLast (LinkedListNode root, int k) {
+        LinkedListNode p1 = root;
+        LinkedListNode p2 = root;
+        if(k<0){
+            System.out.println("K th value is:"+k+" which is less than 0");
+            return p1;
+        }
+        for(int i = 0; i<k; i++) {
+            // check whether linked list null
+            if (p1 == null) {
+                System.out.println("Linked list null");
+                return null;
+            }
+            p1 = p1.next;
+        }
+// till this point we’ll reach at Kth element from head
+        while(p1.next != null){
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+// now p2 at the kth node to last node
+        return p2;
+    }
+
 
     public static void main(String args[]){
         LinkedListNode root = new LinkedListNode(4);
@@ -78,6 +102,7 @@ public class RemoveDuplicate {
         }
         System.out.println("Root after adding data"+root.data);
         root = head;
+
         System.out.println("Print all elements in the linked list");
         while (root != null){
             System.out.println("CurrentNode"+root.data);
@@ -86,7 +111,17 @@ public class RemoveDuplicate {
         root = head;
         System.out.println("CurrentNode after reset"+root.data);
         RemoveDuplicate rd = new RemoveDuplicate();
-        System.out.println("Calling remove duplicate method");
+        int k = 6;
+        try{
+            LinkedListNode resultantNode = rd.kThNodeToLast(head, k);
+            System.out.println(+k+"th Node to last node is: "+resultantNode.data);
+
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+
+        /*System.out.println("Calling remove duplicate method");
         rd.deleteDup(root);
         //rd.deleteDupNoBuffer(root);
         root = head;
@@ -94,7 +129,9 @@ public class RemoveDuplicate {
             System.out.println("CurrentNode"+root.data);
             root = root.next;
         }
-        root = head;
+        root = head;*/
+
+        //Second problem Kth element execution check
 
 
     }
