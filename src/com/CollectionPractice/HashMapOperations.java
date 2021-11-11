@@ -63,6 +63,11 @@ public class HashMapOperations {
         System.out.println("Birds map iteration");
         for(int key : birdsMap.keySet()){
             System.out.println("key: "+ key + " Value: "+ birdsMap.get(key));
+
+        }
+        // iterating usign only values from hashmap
+        for(String str : birdsMap.values()){
+            System.out.println("Only Values: "+str);
         }
         //List of Hash maps
         //different way of iteration

@@ -17,7 +17,10 @@ public class ArrayListOperations {
         // set item at first place
         a1ArrayList.set(0,6);
         System.out.println(a1ArrayList);
-
+        a1ArrayList.add(6);
+        System.out.println(a1ArrayList);
+        a1ArrayList.remove(5);
+        System.out.println(a1ArrayList);
 
     }
 }
