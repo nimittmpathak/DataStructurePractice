@@ -41,6 +41,7 @@ public class HashMapOperations {
         //use of getOrDefault
         System.out.println("Get the value for key 6");
         String result = animalsMap.getOrDefault(6,"Not Found");
+
         System.out.println(result);
         System.out.println("Get the value for key 5");
         result = animalsMap.getOrDefault(5,"Not Found");

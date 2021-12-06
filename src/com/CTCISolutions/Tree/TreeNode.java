@@ -13,5 +13,5 @@ public class TreeNode {
     public int data;
     TreeNode left;
     TreeNode right;
-    public ArrayList<Node> children;
+    public ArrayList<TreeNode> children;
 }

@@ -21,7 +21,7 @@ public class CreateBST {
     }
 
     public static void main(String args[]){
-        int[] sortedArray = {1,2,3,4,5,6,7,8};
+        int[] sortedArray = {1,2,3,4,5,6,7,8,9};
         CreateBST cb = new CreateBST();
         TreeNode resultNode = cb.createMinimalBST(sortedArray);
         System.out.println("Result Node: "+resultNode.data);
