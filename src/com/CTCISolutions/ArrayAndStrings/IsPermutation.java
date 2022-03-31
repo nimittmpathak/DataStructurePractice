@@ -20,12 +20,41 @@ public class IsPermutation {
         }
         return false;
     }
+    public static boolean isPermutationEfficient(String str1, String str2){
+        if (str1.length() != str2.length()){
+            return false;
+        }
+        int[] letters = new int[128]; // assumption
+        char[] charArray = str1.toCharArray();
+        int count = 0;
+        for (char c: charArray) {
+            System.out.print(c+", ");
+            letters[c]++;
+            System.out.println(letters[count]);
+            count++;
+        }
+        for (int i =0 ;i<str2.length();i++){
+            System.out.println("string 1 charat:"+(int)str1.charAt(i));
+            int c = (int) str2.charAt(i);
+            System.out.print(c+",");
+            System.out.println(letters[c]);
+            letters[c]--;
+            System.out.print(c+",");
+            System.out.println(letters[c]);
+            if (letters[c] < 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
     public static void main(String args[]){
-        String s1 ="god";
-        String s2 ="dog";
+        String s1 ="gooooood";
+        String s2 ="dooogggg";
 
-        boolean result = isPermutation(s1,s2);
+        //boolean result = isPermutation(s1,s2);
+        boolean result = isPermutationEfficient(s1,s2);
         System.out.println(result);
     }
 }
